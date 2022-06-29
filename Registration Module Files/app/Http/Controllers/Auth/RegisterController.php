@@ -5,6 +5,7 @@ namespace Pterodactyl\Http\Controllers\auth;
 use Pterodactyl\Contracts\Repository\LocationRepositoryInterface;
 use Pterodactyl\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
@@ -29,14 +30,14 @@ class RegisterController extends Controller
 	 *
 	 * @return \Illuminate\View\View
 	 */
-	public function index()
+	public function index(): View
 	{
 		return view('templates/auth.register', [
 			'locations' => $this->repository->getAllWithDetails(),
 		]);
 	}
 
-	public function register(Request $req)
+	public function register(Request $req): View
 	{
 		$valid = $req->validate([
 			'registration_email' => 'required|email|regex:/(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)+/|min:5|max:35',
