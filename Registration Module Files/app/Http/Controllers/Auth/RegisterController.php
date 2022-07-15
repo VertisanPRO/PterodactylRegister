@@ -6,6 +6,7 @@ use Pterodactyl\Contracts\Repository\LocationRepositoryInterface;
 use Pterodactyl\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Artisan;
 
 class RegisterController extends Controller
 {
@@ -46,8 +47,9 @@ class RegisterController extends Controller
 			'registration_lastname' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/|min:5|max:15'
 		]);
 
-		$path = base_path();
-		$res = shell_exec("cd {$path}; php artisan p:user:make --email={$req->input('registration_email')} --username={$req->input('registration_username')} --name-first={$req->input('registration_firstname')} --name-last={$req->input('registration_lastname')} --admin=0 --no-password");
+		$res = Artisan::call("p:user:make --email={$req->input('registration_email')} --username={$req->input('registration_username')} --name-first={$req->input('registration_firstname')} --name-last={$req->input('registration_lastname')} --admin=0 --no-password");
+
+
 		return view('templates/auth.register', [
 			'locations' => $this->repository->getAllWithDetails(),
 			'post_res' => $res,
