@@ -1,14 +1,14 @@
 **/ Registration Module FREE Version \**
-**/ Module by Mubeen & Gigabait for Pterodactyl 1.8.x \**
+**/ Module by Mubeen & Gigabait for Pterodactyl 1.9.x \**
 
 Before proceeding with installation make sure you have checked the following things:
 
-* Make sure you're running version 1.8.x of Pterodactyl
+* Make sure you're running version 1.9.x of Pterodactyl
 * This Module works with the Unix theme, please contact Mubeen to get the files for the theme.
 
 Installation:
 
-1. Open the "Pterodactyl" Folder found in this directory
+1. Open the "Registration Module Files" Folder found in this directory
 2. Upload all the folders into /var/www/pterodactyl
 3. You're done! The form can be found at https://domain.com/auth/register
 
