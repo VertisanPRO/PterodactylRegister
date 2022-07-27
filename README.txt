@@ -1,9 +1,9 @@
 **/ Registration Module FREE Version \**
-**/ Module by Mubeen & Gigabait for Pterodactyl 1.9.x \**
+**/ Module by Mubeen & Gigabait for Pterodactyl 1.10.x \**
 
 Before proceeding with installation make sure you have checked the following things:
 
-* Make sure you're running version 1.9.x of Pterodactyl
+* Make sure you're running version 1.10.x of Pterodactyl
 * This Module works with the Unix theme, please contact Mubeen to get the files for the theme.
 
 Installation:
