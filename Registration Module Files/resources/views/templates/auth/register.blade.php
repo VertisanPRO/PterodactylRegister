@@ -129,7 +129,7 @@
           </form>
 
 
-          <p class="cyh04c-7 fFcOT">© 2015 - 2021&nbsp;<a rel="noopener nofollow noreferrer" href="https://pterodactyl.io" target="_blank" class="cyh04c-8 emCXNB">Pterodactyl Software</a></p>
+          <p class="cyh04c-7 fFcOT">© 2015 - 2022&nbsp;<a rel="noopener nofollow noreferrer" href="https://pterodactyl.io" target="_blank" class="cyh04c-8 emCXNB">Pterodactyl Software</a></p>
         </div>
       </div>
     </div>
