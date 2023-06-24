@@ -1,4 +1,4 @@
-**/ Registration Module FREE Version \**
+**/ Registration Module 1.0.0 \**
 **/ Module by VertisanPRO for Pterodactyl 1.11.x \**
 
 Before proceeding with installation make sure you have checked the following things:
