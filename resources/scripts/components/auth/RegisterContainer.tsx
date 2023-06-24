@@ -16,6 +16,7 @@ interface Values {
     username: string;
     firstname: string;
     lastname: string;
+    password: string;
 }
 
 const RegisterContainer = () => {
@@ -48,11 +49,11 @@ const RegisterContainer = () => {
         register({ ...values, recaptchaData: token })
             .then((response) => {
                 if (response.complete) {
-                    addFlash({
-                        type: 'success',
-                        title: 'Success',
-                        message: 'You have successfully registered, check your email',
-                    });
+                    if (response.complete) {
+                        // @ts-expect-error this is valid
+                        window.location = response.intended || '/';
+                        return;
+                    }
 
                     setSubmitting(false);
                 }
@@ -86,12 +87,13 @@ const RegisterContainer = () => {
     return (
         <Formik
             onSubmit={onSubmit}
-            initialValues={{ email: '', username: '', firstname: '', lastname: '' }}
+            initialValues={{ email: '', username: '', firstname: '', lastname: '', password: '' }}
             validationSchema={object().shape({
                 email: string().required('An email must be provided.'),
                 username: string().required('An username must be provided.'),
                 firstname: string().required('A first name must be provided.'),
                 lastname: string().required('A last name must be provided.'),
+                password: string().required('A password must be provided.'),
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
@@ -131,6 +133,16 @@ const RegisterContainer = () => {
                             label={'Last Name'}
                             name={'lastname'}
                             placeholder={'Last Name'}
+                            disabled={isSubmitting}
+                        />
+                    </div>
+                    <div css={tw`mt-6`}>
+                        <Field
+                            light
+                            type={'password'}
+                            label={'Password'}
+                            name={'password'}
+                            placeholder={'Password'}
                             disabled={isSubmitting}
                         />
                     </div>

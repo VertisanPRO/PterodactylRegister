@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Auth\Events\Failed;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\Event;
+use Pterodactyl\Events\Auth\DirectLogin;
 use Pterodactyl\Exceptions\DisplayException;
 use Pterodactyl\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -74,8 +75,18 @@ abstract class AbstractRegisterController extends Controller
             'email' => $request->input('email'),
             'username' => $request->input('username'),
             'name_first' => $request->input('firstname'),
-            'name_last' => $request->input('lastname')
+            'name_last' => $request->input('lastname'),
+            'password' => $request->input('password')
         ]);
+
+        $request->session()->remove('auth_confirmation_token');
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        $this->auth->guard()->login($user, true);
+
+        Event::dispatch(new DirectLogin($user, true));
 
         return new JsonResponse([
             'data' => [
