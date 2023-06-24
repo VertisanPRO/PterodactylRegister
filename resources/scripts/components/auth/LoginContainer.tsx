@@ -108,12 +108,12 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                         </Link>
                     </div>
                     <div css={tw`mt-6 text-center`}>
-                        <a
-                            href={'/auth/register'}
+                        <Link
+                            to={'/auth/register'}
                             css={tw`text-xs text-neutral-500 tracking-wide no-underline uppercase`}
                         >
                             Don't have an account?
-                        </a>
+                        </Link>
                     </div>
                 </LoginFormContainer>
             )}
