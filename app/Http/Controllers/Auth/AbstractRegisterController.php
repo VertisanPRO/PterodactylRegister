@@ -12,7 +12,6 @@ use Pterodactyl\Exceptions\DisplayException;
 use Pterodactyl\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Artisan;
 use Pterodactyl\Services\Users\UserCreationService;
 
 abstract class AbstractRegisterController extends Controller
