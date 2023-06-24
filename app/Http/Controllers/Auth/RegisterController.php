@@ -34,10 +34,7 @@ class RegisterController extends AbstractRegisterController
         }
 
         try {
-            $username = $request->input('username');
-            $email = $request->input('email');
-
-            $user = User::where('email', $email)->orWhere('username', $username)->first();
+            $user = User::where('email', $request->input('email'))->orWhere('username', $request->input('username'))->first();
 
             if ($user) {
                 return response()->json(['error' => 'The email or username is already taken.'], 400);
