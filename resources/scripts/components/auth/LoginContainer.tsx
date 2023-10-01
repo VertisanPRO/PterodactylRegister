@@ -112,7 +112,7 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                             to={'/auth/register'}
                             css={tw`text-xs text-neutral-500 tracking-wide no-underline uppercase`}
                         >
-                            Don't have an account?
+                            Don&apos;t have an account?
                         </Link>
                     </div>
                 </LoginFormContainer>

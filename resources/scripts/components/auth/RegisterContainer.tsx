@@ -89,7 +89,7 @@ const RegisterContainer = () => {
             initialValues={{ email: '', username: '', firstname: '', lastname: '' }}
             validationSchema={object().shape({
                 email: string().required('An email must be provided.'),
-                username: string().required('An username must be provided.'),
+                username: string().required('A username must be provided.'),
                 firstname: string().required('A first name must be provided.'),
                 lastname: string().required('A last name must be provided.'),
             })}
