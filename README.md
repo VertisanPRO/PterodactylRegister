@@ -1,11 +1,11 @@
-# Registration Module 1.1.1
-## Module by VertisanPRO for Pterodactyl 1.11.3
+# Registration Module 1.1.2
+## Module by Vertisan for Pterodactyl 1.11.5
 
-Before proceeding with installation make sure you're running version 1.11.3 of Pterodactyl.
+Before proceeding with installation make sure you're running version 1.11.5 of Pterodactyl.
 
 To install the module, you can go one way, either use the automatic installer or manually install the module.
 
-### Automatic installer
+### Automatic installer (RECOMMENDED)
 1. Make sure you are in `/var/www/pterodactyl`
 2. Install the installer via `composer require wemx/pterodactylregister`
 3. Run `php artisan register:install`
