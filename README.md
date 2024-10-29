@@ -1,5 +1,5 @@
 # Registration Module 1.1.2
-## Module by Vertisan for Pterodactyl 1.11.5
+## Module by Vertisan for Pterodactyl 1.11.x
 
 Before proceeding with installation make sure you're running version 1.11.5 of Pterodactyl.
 
